@@ -28,7 +28,7 @@ def main():
     # ------------------------------------------------------------------
 
     run_test_generate_points_on_circle()
-    # run_test_draw_points_on_circle()
+    run_test_draw_points_on_circle()
     # run_test_pizza()
     # run_test_polygon()
     # run_test_fancy_polygon()
@@ -37,7 +37,7 @@ def main():
 def run_test_generate_points_on_circle():
     """ Tests the   generate_points_on_circle   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  generate_points_on_circle  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test (that YOU write).
     #
@@ -189,6 +189,12 @@ def run_test_draw_points_on_circle():
     # ------------------------------------------------------------------
     # Test 4:  (YOU write THIS test)
     # ------------------------------------------------------------------
+    title = "The best test because I wrote it (#4)"
+    window = rg.RoseWindow(500,300)
+    circle = rg.Circle(rg.Point(200, 175), 20)
+    circle.fill_color = 'red'
+    draw_points_on_circle(window, circle, 20)
+    window.close_on_mouse_click()
 
 
 def draw_points_on_circle(window, circle, number_of_points, color):
@@ -226,6 +232,17 @@ def draw_points_on_circle(window, circle, number_of_points, color):
       :type number_of_points: int
       :type color:            str
     """
+    circle.attach_to(window)
+    window.render(.15)
+    for k in range(len(generate_points_on_circle(circle, number_of_points))):
+        circle1 = rg.Circle(generate_points_on_circle(circle, number_of_points)[ k ], 10)
+
+        circle1.fill_color = color
+        circle1.attach_to(window)
+        window.render(1)
+        window.close_on_mouse_click()
+
+
     # ------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
