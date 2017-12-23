@@ -233,13 +233,14 @@ def draw_points_on_circle(window, circle, number_of_points, color):
       :type color:            str
     """
     circle.attach_to(window)
-    window.render(.15)
-    for k in range(len(generate_points_on_circle(circle, number_of_points))):
-        circle1 = rg.Circle(generate_points_on_circle(circle, number_of_points)[ k ], 10)
+    points = generate_points_on_circle(circle,number_of_points)
+    for k in range(number_of_points):
+        circle1 = rg.Circle(points[ k ], 10)
 
         circle1.fill_color = color
         circle1.attach_to(window)
-        window.render(1)
+        points[k]
+        window.render(.15)
         window.close_on_mouse_click()
 
 
