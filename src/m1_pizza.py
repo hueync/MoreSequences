@@ -6,8 +6,8 @@ This module lets you practice:
   -- CALLING functions
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Nathaniel Huey.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import math
@@ -60,6 +60,20 @@ def run_test_generate_points_on_circle():
                 rg.Point(112.5, 28.3)]
     circle = rg.Circle(rg.Point(100, 50), 25)
     answer = generate_points_on_circle(circle, 6)
+
+    print('Expected:', expected)
+    print('Actual:  ', answer)
+
+    expected = [rg.Point(209, 35),
+                rg.Point(206.4,41.4),
+                rg.Point(200,44),
+                rg.Point(193.6, 41.4),
+                rg.Point(191, 35),
+                rg.Point(193.6, 28.6),
+                rg.Point(200, 26),
+                rg.Point(206.4, 28.6)]
+    circle = rg.Circle(rg.Point(200,35), 9)
+    answer = generate_points_on_circle(circle, 8)
 
     print('Expected:', expected)
     print('Actual:  ', answer)
