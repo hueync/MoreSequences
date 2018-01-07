@@ -155,7 +155,7 @@ def count_last_n_odds(integers, n):
       :rtype: int
     """
     count = 0
-    for k in range(len(integers)- (n), len(integers)):
+    for k in range(len(integers[n]), len(integers),1):
         if k % 2 != 0:
             count = count + 1
     return count
